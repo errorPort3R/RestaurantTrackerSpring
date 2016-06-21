@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<form action="/logout" method="post">
+    <button type="submit">Logout</button>
+</form>
+
+<form action="/create-restaurant" method="post">
+    <input type="text" name="name"  placeholder="Name">
+    <input type="text" name="location"  placeholder="Location">
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="text" name="comment"  placeholder="Comment">
+    <button type="submit">Submit Restaurant</button>
+
+</form>
+<ol>
+    {{#restaurants}}
+    <li><b>{{name}}</b> - {{location}} - {{rating}}/5 - {{comment}}
+        <form action="/delete-restaurant" method="post" style="Display: inline-block">
+            <input type="hidden" name="id"  value="{{id}}">
+        <button type="submit">Delete</button>
+    </form></li>
+    {{/restaurants}}
+</ol>
+</body>
+</html>

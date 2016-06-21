@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "restaurants")
-public class Restaurants
+public class Restaurant
 {
 
     @Id
@@ -27,11 +27,15 @@ public class Restaurants
     @Column(nullable = false)
     String comment;
 
-    public Restaurants(String name, String location, int rating, String comment)
+    public Restaurant(String name, String location, int rating, String comment)
     {
         this.name = name;
         this.location = location;
         this.rating = rating;
         this.comment = comment;
+    }
+
+    public Restaurant()
+    {
     }
 }
